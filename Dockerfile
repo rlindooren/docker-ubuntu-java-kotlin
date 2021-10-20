@@ -28,9 +28,6 @@ WORKDIR /home/$USER
 # Install OH-MY-ZSH
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# This is ugly, but it prevents the need from running the Docker image with `--entrypoint=/usr/bin/zsh`
-RUN echo "exec zsh" >> .bashrc
-
 # Install SDKMAN! and get the JVM etc. (simply get the latest versions)
 RUN curl -s "https://get.sdkman.io?rcupdate=false" | bash
 RUN echo "source /home/$USER/.sdkman/bin/sdkman-init.sh" >> /home/$USER/.zshrc
@@ -40,3 +37,5 @@ RUN zsh -c "source /home/$USER/.sdkman/bin/sdkman-init.sh && sdk install gradle"
 RUN zsh -c "source /home/$USER/.sdkman/bin/sdkman-init.sh && sdk install maven"
 
 WORKDIR /home/$USER/project
+
+CMD ["zsh"]
