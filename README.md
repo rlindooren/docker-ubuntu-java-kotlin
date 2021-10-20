@@ -4,6 +4,8 @@
 
 I created this Docker file to have an easy way to build Java/Kotlin projects in a Linux environment on my Macbook.
 
+Please note that it results in quite a big Docker image. It's a quick and ~~dirty~~ worthy approach 😉.
+
 ## How to use
 
 Build the image (one time):
