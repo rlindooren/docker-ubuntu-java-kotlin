@@ -8,6 +8,13 @@ Please note that it results in quite a big Docker image. It's a quick and ~~dirt
 
 ## How to use
 
+A pre-build image can be found here: [rlindooren/ubuntu-java:latest](https://hub.docker.com/r/rlindooren/ubuntu-java/tags)
+
+```
+cd ~/code/your-project
+docker run --rm -ti -v "$PWD:/home/dev/project" rlindooren/ubuntu-java:latest
+```
+
 Build the image (one time):
 
 ```
